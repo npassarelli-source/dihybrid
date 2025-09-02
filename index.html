@@ -534,35 +534,38 @@
                     <p className="mb-4">
                       Now we'll use a Punnett Square to find all possible offspring genotypes.
                     </p>
-                    <div className="p-4 bg-gray-100 rounded-lg shadow-inner">
-                      <div className="w-full text-center mb-2 font-semibold">Female's Possible Egg Combinations</div>
-                      <div className="flex w-full justify-center">
-                        <div className="flex flex-col justify-around text-center mr-2 font-semibold [writing-mode:vertical-lr] [text-orientation:sideways-right] leading-none whitespace-nowrap">
-                          Male's Possible Sperm Combinations
-                        </div>
-                        <div className="grid grid-cols-5 gap-2 text-center flex-grow">
-                          {/* Top-left empty corner */}
-                          <div className="w-12 h-12"></div>
-                          {/* Female Gametes Header Row */}
-                          {correctGametes.map((gamete, index) => (
-                            <div key={`female-${index}`} className="w-12 h-12 flex items-center justify-center font-bold text-purple-600 border-b-2 border-purple-500">
-                              {gamete}
-                            </div>
-                          ))}
-                          {/* Male Gametes Column and Punnett Square Grid */}
-                          {correctGametes.map((gamete, rIndex) => (
-                            <React.Fragment key={`row-${rIndex}`}>
-                              <div className="w-12 h-12 flex items-center justify-center font-bold text-purple-600 border-r-2 border-purple-500">
+                    <div className="p-2 sm:p-4 bg-gray-100 rounded-lg shadow-inner">
+                      <div className="flex items-center w-full justify-center">
+                          <div className="flex-shrink-0 text-xs sm:text-base font-semibold text-center [writing-mode:horizontal-tb] sm:[writing-mode:vertical-lr] sm:[text-orientation:sideways-right] leading-none whitespace-nowrap">
+                            <span className="hidden sm:inline">Male's Possible Sperm Combinations</span>
+                            <span className="sm:hidden text-purple-600 mr-2">Sperms</span>
+                          </div>
+                          <div className="flex-grow grid grid-cols-5 gap-1 sm:gap-2 text-center">
+                            {/* Top-left empty corner */}
+                            <div className="w-full h-8 sm:h-12"></div>
+                            {/* Female Gametes Header Row */}
+                            {correctGametes.map((gamete, index) => (
+                              <div key={`female-${index}`} className="w-full h-8 sm:h-12 flex items-center justify-center font-bold text-purple-600 text-xs sm:text-base border-b-2 border-purple-500">
                                 {gamete}
                               </div>
-                              {Array.from({ length: 4 }).map((_, cIndex) => (
-                                <div key={`${rIndex}-${cIndex}`} className="w-12 h-12 bg-white rounded-md flex items-center justify-center border border-gray-300 text-sm">
-                                  
+                            ))}
+                            {/* Male Gametes Column and Punnett Square Grid */}
+                            {correctGametes.map((gamete, rIndex) => (
+                              <React.Fragment key={`row-${rIndex}`}>
+                                <div className="w-full h-8 sm:h-12 flex items-center justify-center font-bold text-purple-600 text-xs sm:text-base border-r-2 border-purple-500">
+                                  {gamete}
                                 </div>
-                              ))}
-                            </React.Fragment>
-                          ))}
-                        </div>
+                                {Array.from({ length: 4 }).map((_, cIndex) => (
+                                  <div key={`${rIndex}-${cIndex}`} className="w-full h-8 sm:h-12 bg-white rounded-md flex items-center justify-center border border-gray-300 text-xs sm:text-sm">
+                                    
+                                  </div>
+                                ))}
+                              </React.Fragment>
+                            ))}
+                          </div>
+                      </div>
+                      <div className="w-full text-center mt-2 font-semibold [writing-mode:horizontal-tb] sm:hidden">
+                          <span className="text-purple-600">Eggs</span>
                       </div>
                     </div>
                     <div className="flex justify-between mt-auto w-full">
@@ -598,47 +601,50 @@
                     <p className="mb-4">
                       Fill in each square by combining the alleles from the top row and the left column to find the resulting offspring **genotype**.
                     </p>
-                    <div className="p-4 bg-gray-100 rounded-lg shadow-inner">
-                      <div className="w-full text-center mb-2 font-semibold">Female's Possible Egg Combinations</div>
-                      <div className="flex w-full justify-center">
-                        <div className="flex flex-col justify-around text-center mr-2 font-semibold [writing-mode:vertical-lr] [text-orientation:sideways-right] leading-none whitespace-nowrap">
-                          Male's Possible Sperm Combinations
-                        </div>
-                        <div className="grid grid-cols-5 gap-2 text-center flex-grow">
-                          {/* Top-left empty corner */}
-                          <div className="w-12 h-12"></div>
-                          {/* Female Gametes Header Row */}
-                          {correctGametes.map((gamete, index) => (
-                            <div key={`female-${index}`} className="w-12 h-12 flex items-center justify-center font-bold text-purple-600 border-b-2 border-purple-500">
-                              {gamete}
-                            </div>
-                          ))}
-                          {/* Male Gametes Column and Punnett Square Grid */}
-                          {correctGametes.map((gamete, rIndex) => (
-                            <React.Fragment key={`row-${rIndex}`}>
-                              <div className="w-12 h-12 flex items-center justify-center font-bold text-purple-600 border-r-2 border-purple-500">
+                    <div className="p-2 sm:p-4 bg-gray-100 rounded-lg shadow-inner">
+                      <div className="flex items-center w-full justify-center">
+                          <div className="flex-shrink-0 text-xs sm:text-base font-semibold text-center [writing-mode:horizontal-tb] sm:[writing-mode:vertical-lr] sm:[text-orientation:sideways-right] leading-none whitespace-nowrap">
+                            <span className="hidden sm:inline">Male's Possible Sperm Combinations</span>
+                            <span className="sm:hidden text-purple-600 mr-2">Sperms</span>
+                          </div>
+                          <div className="flex-grow grid grid-cols-5 gap-1 sm:gap-2 text-center">
+                            {/* Top-left empty corner */}
+                            <div className="w-full h-8 sm:h-12"></div>
+                            {/* Female Gametes Header Row */}
+                            {correctGametes.map((gamete, index) => (
+                              <div key={`female-${index}`} className="w-full h-8 sm:h-12 flex items-center justify-center font-bold text-purple-600 text-xs sm:text-base border-b-2 border-purple-500">
                                 {gamete}
                               </div>
-                              {Array.from({ length: 4 }).map((_, cIndex) => (
-                                <div key={`${rIndex}-${cIndex}`} className="relative bg-white rounded-md h-12 flex flex-col items-center justify-center border-2 border-gray-300">
-                                  <input
-                                    type="text"
-                                    value={punnettSquare[rIndex][cIndex]}
-                                    onChange={(e) => handlePunnettSquareChange(e, rIndex, cIndex)}
-                                    className={`w-full h-full text-center p-1 rounded-lg focus:border-purple-500 focus:outline-none text-sm
-                                      ${punnettSquareFeedback[rIndex][cIndex] ? 'border-red-500' : 'border-gray-300'}`}
-                                    maxLength="4"
-                                  />
-                                   {punnettSquareFeedback[rIndex][cIndex] && (
-                                    <div className="absolute top-full mt-1 w-48 p-2 text-xs text-left bg-red-100 text-red-700 rounded-lg shadow-lg z-10">
-                                      {punnettSquareFeedback[rIndex][cIndex]}
-                                    </div>
-                                  )}
+                            ))}
+                            {/* Male Gametes Column and Punnett Square Grid */}
+                            {correctGametes.map((gamete, rIndex) => (
+                              <React.Fragment key={`row-${rIndex}`}>
+                                <div className="w-full h-8 sm:h-12 flex items-center justify-center font-bold text-purple-600 text-xs sm:text-base border-r-2 border-purple-500">
+                                  {gamete}
                                 </div>
-                              ))}
-                            </React.Fragment>
-                          ))}
-                        </div>
+                                {Array.from({ length: 4 }).map((_, cIndex) => (
+                                  <div key={`${rIndex}-${cIndex}`} className="relative bg-white rounded-md w-full h-8 sm:h-12 flex flex-col items-center justify-center border-2 border-gray-300">
+                                    <input
+                                      type="text"
+                                      value={punnettSquare[rIndex][cIndex]}
+                                      onChange={(e) => handlePunnettSquareChange(e, rIndex, cIndex)}
+                                      className={`w-full h-full text-center p-1 rounded-lg focus:border-purple-500 focus:outline-none text-xs sm:text-sm
+                                        ${punnettSquareFeedback[rIndex][cIndex] ? 'border-red-500' : 'border-gray-300'}`}
+                                      maxLength="4"
+                                    />
+                                    {punnettSquareFeedback[rIndex][cIndex] && (
+                                      <div className="absolute top-full mt-1 w-full sm:w-48 p-2 text-[0.6rem] sm:text-xs text-left bg-red-100 text-red-700 rounded-lg shadow-lg z-10">
+                                        {punnettSquareFeedback[rIndex][cIndex]}
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </React.Fragment>
+                            ))}
+                          </div>
+                      </div>
+                       <div className="w-full text-center mt-2 font-semibold [writing-mode:horizontal-tb] sm:hidden">
+                          <span className="text-purple-600">Eggs</span>
                       </div>
                       {feedback && (
                         <div className={`mt-4 p-3 rounded-lg ${feedback.startsWith('Correct') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
@@ -674,42 +680,45 @@
                       Now that the Punnett Square is complete, let's use it to answer some questions about the offspring.
                     </p>
                     {/* Display completed Punnett Square here */}
-                    <div className="p-4 bg-gray-100 rounded-lg shadow-inner mb-6">
-                      <div className="w-full text-center mb-2 font-semibold">Female's Possible Egg Combinations</div>
-                      <div className="flex w-full justify-center">
-                        <div className="flex flex-col justify-around text-center mr-2 font-semibold [writing-mode:vertical-lr] [text-orientation:sideways-right] leading-none whitespace-nowrap">
-                          Male's Possible Sperm Combinations
-                        </div>
-                        <div className="grid grid-cols-5 gap-2 text-center flex-grow">
-                          {/* Top-left empty corner */}
-                          <div className="w-12 h-12"></div>
-                          {/* Female Gametes Header Row */}
-                          {correctGametes.map((gamete, index) => (
-                            <div key={`female-${index}`} className="w-12 h-12 flex items-center justify-center font-bold text-purple-600 border-b-2 border-purple-500">
-                              {gamete}
-                            </div>
-                          ))}
-                          {/* Male Gametes Column and Punnett Square Grid */}
-                          {correctGametes.map((gamete, rIndex) => (
-                            <React.Fragment key={`row-${rIndex}`}>
-                              <div className="w-12 h-12 flex items-center justify-center font-bold text-purple-600 border-r-2 border-purple-500">
+                    <div className="p-2 sm:p-4 bg-gray-100 rounded-lg shadow-inner mb-6">
+                      <div className="flex items-center w-full justify-center">
+                          <div className="flex-shrink-0 text-xs sm:text-base font-semibold text-center [writing-mode:horizontal-tb] sm:[writing-mode:vertical-lr] sm:[text-orientation:sideways-right] leading-none whitespace-nowrap">
+                            <span className="hidden sm:inline">Male's Possible Sperm Combinations</span>
+                            <span className="sm:hidden text-purple-600 mr-2">Sperms</span>
+                          </div>
+                          <div className="flex-grow grid grid-cols-5 gap-1 sm:gap-2 text-center">
+                            {/* Top-left empty corner */}
+                            <div className="w-full h-8 sm:h-12"></div>
+                            {/* Female Gametes Header Row */}
+                            {correctGametes.map((gamete, index) => (
+                              <div key={`female-${index}`} className="w-full h-8 sm:h-12 flex items-center justify-center font-bold text-purple-600 text-xs sm:text-base border-b-2 border-purple-500">
                                 {gamete}
                               </div>
-                              {Array.from({ length: 4 }).map((_, cIndex) => {
-                                const isHighlighted = highlightedCells.some(cell => cell.row === rIndex && cell.col === cIndex);
-                                return (
-                                  <div
-                                    key={`${rIndex}-${cIndex}`}
-                                    className={`w-12 h-12 bg-white rounded-md flex items-center justify-center border border-gray-300 text-sm font-mono transition-all duration-300
-                                      ${isHighlighted ? 'border-yellow-400 border-4 shadow-md' : ''}`}
-                                  >
-                                    {correctPunnettSquare[rIndex][cIndex]}
-                                  </div>
-                                );
-                              })}
-                            </React.Fragment>
-                          ))}
-                        </div>
+                            ))}
+                            {/* Male Gametes Column and Punnett Square Grid */}
+                            {correctGametes.map((gamete, rIndex) => (
+                              <React.Fragment key={`row-${rIndex}`}>
+                                <div className="w-full h-8 sm:h-12 flex items-center justify-center font-bold text-purple-600 text-xs sm:text-base border-r-2 border-purple-500">
+                                  {gamete}
+                                </div>
+                                {Array.from({ length: 4 }).map((_, cIndex) => {
+                                  const isHighlighted = highlightedCells.some(cell => cell.row === rIndex && cell.col === cIndex);
+                                  return (
+                                    <div
+                                      key={`${rIndex}-${cIndex}`}
+                                      className={`w-full h-8 sm:h-12 bg-white rounded-md flex items-center justify-center border border-gray-300 text-xs sm:text-sm font-mono transition-all duration-300
+                                        ${isHighlighted ? 'border-yellow-400 border-4 shadow-md' : ''}`}
+                                    >
+                                      {correctPunnettSquare[rIndex][cIndex]}
+                                    </div>
+                                  );
+                                })}
+                              </React.Fragment>
+                            ))}
+                          </div>
+                      </div>
+                      <div className="w-full text-center mt-2 font-semibold [writing-mode:horizontal-tb] sm:hidden">
+                          <span className="text-purple-600">Eggs</span>
                       </div>
                     </div>
                     <div className="bg-gray-100 p-6 rounded-lg">
